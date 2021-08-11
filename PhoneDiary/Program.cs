@@ -13,14 +13,21 @@ namespace PhoneDiary
         ///  The main entry point for the application.
         /// </summary>
         [STAThread]
-        static void Main()
+        static void Main(string[] args)
         {
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             try
             {
-                Application.Run(new MainApp());
+                if (args.Length >= 1)
+                {
+                    Application.Run(new MainApp(args[0]));
+                }
+                else
+                {
+                    Application.Run(new MainApp());
+                }
             }
             catch
             {

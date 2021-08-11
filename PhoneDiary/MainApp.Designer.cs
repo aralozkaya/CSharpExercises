@@ -50,9 +50,25 @@ namespace PhoneDiary
             this.addButton = new System.Windows.Forms.Button();
             this.contactList = new System.Windows.Forms.DataGridView();
             this.refreshButton = new System.Windows.Forms.Button();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.openDatabaseFileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exportDatabaseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.addToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.editToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.refreshToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.contactInfoBox.SuspendLayout();
             this.personalInformationBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.contactList)).BeginInit();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // contactInfoBox
@@ -63,7 +79,7 @@ namespace PhoneDiary
             this.contactInfoBox.Controls.Add(this.numberBoxLabel);
             this.contactInfoBox.Controls.Add(this.surnameBoxLabel);
             this.contactInfoBox.Controls.Add(this.nameBoxLabel);
-            this.contactInfoBox.Location = new System.Drawing.Point(12, 12);
+            this.contactInfoBox.Location = new System.Drawing.Point(12, 36);
             this.contactInfoBox.Name = "contactInfoBox";
             this.contactInfoBox.Size = new System.Drawing.Size(300, 150);
             this.contactInfoBox.TabIndex = 0;
@@ -129,7 +145,7 @@ namespace PhoneDiary
             this.personalInformationBox.Controls.Add(this.companyBoxLabel);
             this.personalInformationBox.Controls.Add(this.birthdaySelectorLabel);
             this.personalInformationBox.Controls.Add(this.genderSelectorLabel);
-            this.personalInformationBox.Location = new System.Drawing.Point(12, 168);
+            this.personalInformationBox.Location = new System.Drawing.Point(12, 192);
             this.personalInformationBox.Name = "personalInformationBox";
             this.personalInformationBox.Size = new System.Drawing.Size(300, 150);
             this.personalInformationBox.TabIndex = 1;
@@ -195,7 +211,7 @@ namespace PhoneDiary
             // editButton
             // 
             this.editButton.Enabled = false;
-            this.editButton.Location = new System.Drawing.Point(165, 324);
+            this.editButton.Location = new System.Drawing.Point(165, 348);
             this.editButton.Name = "editButton";
             this.editButton.Size = new System.Drawing.Size(147, 34);
             this.editButton.TabIndex = 2;
@@ -206,7 +222,7 @@ namespace PhoneDiary
             // deleteButton
             // 
             this.deleteButton.Enabled = false;
-            this.deleteButton.Location = new System.Drawing.Point(12, 361);
+            this.deleteButton.Location = new System.Drawing.Point(12, 385);
             this.deleteButton.Name = "deleteButton";
             this.deleteButton.Size = new System.Drawing.Size(147, 34);
             this.deleteButton.TabIndex = 3;
@@ -216,7 +232,7 @@ namespace PhoneDiary
             // 
             // addButton
             // 
-            this.addButton.Location = new System.Drawing.Point(12, 324);
+            this.addButton.Location = new System.Drawing.Point(12, 348);
             this.addButton.Name = "addButton";
             this.addButton.Size = new System.Drawing.Size(147, 34);
             this.addButton.TabIndex = 4;
@@ -243,20 +259,20 @@ namespace PhoneDiary
             this.contactList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.contactList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.contactList.EnableHeadersVisualStyles = false;
-            this.contactList.Location = new System.Drawing.Point(318, 24);
+            this.contactList.Location = new System.Drawing.Point(318, 48);
             this.contactList.Name = "contactList";
             this.contactList.ReadOnly = true;
             this.contactList.RowHeadersVisible = false;
             this.contactList.RowHeadersWidth = 62;
             this.contactList.RowTemplate.Height = 33;
             this.contactList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.contactList.Size = new System.Drawing.Size(895, 371);
+            this.contactList.Size = new System.Drawing.Size(895, 370);
             this.contactList.TabIndex = 5;
             this.contactList.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.contactList_RowEnter);
             // 
             // refreshButton
             // 
-            this.refreshButton.Location = new System.Drawing.Point(165, 361);
+            this.refreshButton.Location = new System.Drawing.Point(165, 385);
             this.refreshButton.Name = "refreshButton";
             this.refreshButton.Size = new System.Drawing.Size(147, 34);
             this.refreshButton.TabIndex = 6;
@@ -264,11 +280,130 @@ namespace PhoneDiary
             this.refreshButton.UseVisualStyleBackColor = true;
             this.refreshButton.Click += new System.EventHandler(this.refreshButton_Click);
             // 
+            // menuStrip1
+            // 
+            this.menuStrip1.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItem1,
+            this.editToolStripMenuItem,
+            this.helpToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(1225, 33);
+            this.menuStrip1.TabIndex = 7;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.openDatabaseFileToolStripMenuItem,
+            this.exportDatabaseToolStripMenuItem,
+            this.exitToolStripMenuItem});
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(54, 29);
+            this.toolStripMenuItem1.Text = "File";
+            // 
+            // openDatabaseFileToolStripMenuItem
+            // 
+            this.openDatabaseFileToolStripMenuItem.Name = "openDatabaseFileToolStripMenuItem";
+            this.openDatabaseFileToolStripMenuItem.Size = new System.Drawing.Size(280, 34);
+            this.openDatabaseFileToolStripMenuItem.Text = "Open Database File...";
+            this.openDatabaseFileToolStripMenuItem.Click += new System.EventHandler(this.openDatabaseFileToolStripMenuItem_Click);
+            // 
+            // exportDatabaseToolStripMenuItem
+            // 
+            this.exportDatabaseToolStripMenuItem.Name = "exportDatabaseToolStripMenuItem";
+            this.exportDatabaseToolStripMenuItem.Size = new System.Drawing.Size(280, 34);
+            this.exportDatabaseToolStripMenuItem.Text = "Export Database...";
+            this.exportDatabaseToolStripMenuItem.Click += new System.EventHandler(this.exportDatabaseToolStripMenuItem_Click);
+            // 
+            // exitToolStripMenuItem
+            // 
+            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(280, 34);
+            this.exitToolStripMenuItem.Text = "Exit";
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
+            // 
+            // editToolStripMenuItem
+            // 
+            this.editToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.addToolStripMenuItem,
+            this.editToolStripMenuItem1,
+            this.saveToolStripMenuItem,
+            this.deleteToolStripMenuItem,
+            this.refreshToolStripMenuItem});
+            this.editToolStripMenuItem.Name = "editToolStripMenuItem";
+            this.editToolStripMenuItem.Size = new System.Drawing.Size(58, 29);
+            this.editToolStripMenuItem.Text = "Edit";
+            // 
+            // addToolStripMenuItem
+            // 
+            this.addToolStripMenuItem.Name = "addToolStripMenuItem";
+            this.addToolStripMenuItem.Size = new System.Drawing.Size(172, 34);
+            this.addToolStripMenuItem.Text = "Add";
+            this.addToolStripMenuItem.Click += new System.EventHandler(this.addButton_Click);
+            // 
+            // editToolStripMenuItem1
+            // 
+            this.editToolStripMenuItem1.Name = "editToolStripMenuItem1";
+            this.editToolStripMenuItem1.Size = new System.Drawing.Size(172, 34);
+            this.editToolStripMenuItem1.Text = "Edit";
+            this.editToolStripMenuItem1.Click += new System.EventHandler(this.editButton_Click);
+            // 
+            // saveToolStripMenuItem
+            // 
+            this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(172, 34);
+            this.saveToolStripMenuItem.Text = "Save";
+            // 
+            // deleteToolStripMenuItem
+            // 
+            this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
+            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(172, 34);
+            this.deleteToolStripMenuItem.Text = "Delete";
+            this.deleteToolStripMenuItem.Click += new System.EventHandler(this.deleteButton_Click);
+            // 
+            // refreshToolStripMenuItem
+            // 
+            this.refreshToolStripMenuItem.Name = "refreshToolStripMenuItem";
+            this.refreshToolStripMenuItem.Size = new System.Drawing.Size(172, 34);
+            this.refreshToolStripMenuItem.Text = "Refresh";
+            this.refreshToolStripMenuItem.Click += new System.EventHandler(this.refreshButton_Click);
+            // 
+            // helpToolStripMenuItem
+            // 
+            this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.aboutToolStripMenuItem});
+            this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(65, 29);
+            this.helpToolStripMenuItem.Text = "Help";
+            // 
+            // aboutToolStripMenuItem
+            // 
+            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.aboutToolStripMenuItem.Text = "About...";
+            this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
+            // 
+            // saveFileDialog1
+            // 
+            this.saveFileDialog1.DefaultExt = "csv";
+            this.saveFileDialog1.FileName = "database";
+            this.saveFileDialog1.Filter = "Contact Database|*.csv";
+            this.saveFileDialog1.Title = "Export Database";
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.DefaultExt = "csv";
+            this.openFileDialog1.FileName = "database";
+            this.openFileDialog1.Filter = "Database Files|*.csv";
+            // 
             // MainApp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1225, 407);
+            this.ClientSize = new System.Drawing.Size(1225, 430);
             this.Controls.Add(this.refreshButton);
             this.Controls.Add(this.contactList);
             this.Controls.Add(this.addButton);
@@ -276,7 +411,9 @@ namespace PhoneDiary
             this.Controls.Add(this.editButton);
             this.Controls.Add(this.personalInformationBox);
             this.Controls.Add(this.contactInfoBox);
+            this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MainMenuStrip = this.menuStrip1;
             this.Name = "MainApp";
             this.Text = "Sample Contacts Application";
             this.contactInfoBox.ResumeLayout(false);
@@ -284,7 +421,10 @@ namespace PhoneDiary
             this.personalInformationBox.ResumeLayout(false);
             this.personalInformationBox.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.contactList)).EndInit();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -309,6 +449,21 @@ namespace PhoneDiary
         private System.Windows.Forms.DataGridView contactList;
         private System.Windows.Forms.ComboBox genderSelector;
         private System.Windows.Forms.Button refreshButton;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem openDatabaseFileToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem exportDatabaseToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem editToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem addToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem editToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem deleteToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem refreshToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem saveToolStripMenuItem;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
     }
 }
 

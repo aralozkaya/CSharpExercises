@@ -382,7 +382,7 @@ namespace PhoneDiary
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(176, 34);
             this.aboutToolStripMenuItem.Text = "About...";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
@@ -398,6 +398,7 @@ namespace PhoneDiary
             this.openFileDialog1.DefaultExt = "csv";
             this.openFileDialog1.FileName = "database";
             this.openFileDialog1.Filter = "Database Files|*.csv";
+            this.openFileDialog1.FileOk += new System.ComponentModel.CancelEventHandler(this.openFileDialog1_FileOk);
             // 
             // MainApp
             // 

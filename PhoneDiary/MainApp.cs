@@ -253,12 +253,16 @@ namespace PhoneDiary
         {
             this.saveFileDialog1.ShowDialog();
             var file = this.saveFileDialog1.FileName;
-            File.Copy(database, file);
+            File.Copy(database, file, true);
         }
 
         private void openDatabaseFileToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.openFileDialog1.ShowDialog();
+        }
+
+        private void openFileDialog1_FileOk(object sender, CancelEventArgs e)
+        {
             var file = this.openFileDialog1.FileName;
             Process secondProc = new Process();
             secondProc.StartInfo.FileName = Application.ExecutablePath;
